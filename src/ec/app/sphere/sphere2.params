@@ -51,7 +51,7 @@ eval.problem = ec.app.sphere.SphereProb2
 eval.problem.data = ec.app.sphere.SphereData
 eval.problem.stack.context.data = ec.app.sphere.SphereData
 
-stat = ec.simple.SimpleStatistics
+stat = ec.app.sphere.SphereStats2
 stat.file = out.stat
 stat.num-children = 1
 stat.child.0 = ec.simple.SimpleShortStatistics

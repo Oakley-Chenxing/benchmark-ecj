@@ -22,7 +22,7 @@ public class SphereProb2 extends GPProblem implements SimpleProblemForm {
         float x = ((SphereData)input).x;
         x = Math.max(x, -1f);
         x = Math.min(x, 1f);
-        if (x == 0f)
+        if (Math.abs(x) <= 1e-8f)
           hits++;
         fit += x*x;
       }
