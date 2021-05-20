@@ -1,0 +1,58 @@
+parent.0 = ../../gp/koza/koza.params
+
+pop.subpop.0.species.ind.numtrees = 2
+pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.0.tc = tc0
+pop.subpop.0.species.ind.tree.1 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.1.tc = tc0
+
+gp.type.a.size = 1
+gp.type.a.0.name = float
+gp.type.s.size = 0
+
+gp.tc.size = 1
+gp.tc.0 = ec.gp.GPTreeConstraints
+gp.tc.0.name = tc0
+gp.tc.0.fset = f0
+gp.tc.0.returns = float
+gp.tc.0.init = ec.gp.koza.HalfBuilder
+
+gp.nc.size = 2
+
+gp.nc.0 = ec.gp.GPNodeConstraints
+gp.nc.0.name = ncf0
+gp.nc.0.returns = float
+gp.nc.0.size = 0
+
+gp.nc.1 = ec.gp.GPNodeConstraints
+gp.nc.1.name = ncff2
+gp.nc.1.returns = float
+gp.nc.1.size = 2
+gp.nc.1.child.0 = float
+gp.nc.1.child.1 = float
+
+gp.fs.size = 1
+gp.fs.0.name = f0
+gp.fs.0.info = ec.gp.GPFuncInfo
+gp.fs.0.size = 5
+
+gp.fs.0.func.0 = ec.app.rosenbrock.func.RosenbrockERC
+gp.fs.0.func.0.nc = ncf0
+gp.fs.0.func.1 = ec.app.rosenbrock.func.Add
+gp.fs.0.func.1.nc = ncff2
+gp.fs.0.func.2 = ec.app.rosenbrock.func.Subtract
+gp.fs.0.func.2.nc = ncff2
+gp.fs.0.func.3 = ec.app.rosenbrock.func.Mul
+gp.fs.0.func.3.nc = ncff2
+gp.fs.0.func.4 = ec.app.rosenbrock.func.Div
+gp.fs.0.func.4.nc = ncff2
+
+eval.problem = ec.app.rosenbrock.RosenbrockPro2
+eval.problem.data = ec.app.rosenbrock.RosenbrockData
+eval.problem.stack.context.data = ec.app.rosenbrock.RosenbrockData
+
+stat = ec.app.rosenbrock.RosenbrockStats2
+stat.file = out.stat
+stat.num-children = 1
+stat.child.0 = ec.simple.SimpleShortStatistics
+stat.child.0.file = out2.stat

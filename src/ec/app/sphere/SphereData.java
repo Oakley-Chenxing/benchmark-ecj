@@ -6,8 +6,8 @@ import ec.gp.*;
 public class SphereData extends GPData {
   @Override
 	public void copyTo(final GPData gpd) {
-		SphereData textureData = (SphereData) gpd;
-		textureData.x  = x;
+		SphereData sphereData = (SphereData) gpd;
+		sphereData.x  = x;
 	}
 
 	public float x;
