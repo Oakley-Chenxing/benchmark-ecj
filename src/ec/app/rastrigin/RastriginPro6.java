@@ -6,7 +6,7 @@ import ec.gp.koza.*;
 import ec.simple.*;
 
 @SuppressWarnings("serial")
-public class RastriginPro2 extends GPProblem implements SimpleProblemForm { 
+public class RastriginPro6 extends GPProblem implements SimpleProblemForm { 
   @Override 
   public void evaluate(final EvolutionState state, 
 	      final Individual ind,
@@ -43,5 +43,5 @@ public class RastriginPro2 extends GPProblem implements SimpleProblemForm {
 	    }
 	  }
 	  
-	  public static final int DIM = 2;
+	  public static final int DIM = 6;
 	}
