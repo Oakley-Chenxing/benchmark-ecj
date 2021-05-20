@@ -14,7 +14,7 @@ public class RastriginStats20 extends SimpleStatistics {
       System.out.print("[ ");
       GPData       input = new RastriginData();
       GPIndividual ind   = (GPIndividual)best_of_run[0];
-      for (int t=0; t<RastriginPro2.DIM; t++) {
+      for (int t=0; t<RastriginPro20.DIM; t++) {
         ind.trees[t].child.eval(state, 0, input, null, ind, null);
         float x = ((RastriginData)input).x;
         x = Math.max(x, -1f);
