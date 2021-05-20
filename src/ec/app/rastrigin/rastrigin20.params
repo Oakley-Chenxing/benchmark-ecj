@@ -1,5 +1,6 @@
 parent.0 = ../../gp/koza/koza.params
 
+pop.subpop.0.species.ind.numtrees = 20
 pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
 pop.subpop.0.species.ind.tree.0.tc = tc0
 pop.subpop.0.species.ind.tree.1 = ec.gp.GPTree

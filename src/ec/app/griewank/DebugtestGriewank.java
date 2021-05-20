@@ -7,14 +7,14 @@ public class DebugtestGriewank {
 	    System.out.println("ras: "+ras);
 	  }
 	 public static double rastrigin(double[] rep) {
-		 //Rastrigin code developed from
-		 //https://www.javatips.net/api/MOEAFramework-master/src/org/moeaframework/problem/BBOB2016/Rastrigin.java
+		 //griewank code developed from
+		 //https://
 		 double sum = 0.0;
 
-		    for (int i=0; i<rep.length; i++) {
-		     double temp1 = Math.cos(2.0 * Math.PI * rep[i]);
-		     double temp2 =  rep[i] * rep[i];
-		     sum += (-10.0 * temp1 ) + temp2 + 10;
+		   for (int i=0; i<rep.length; i++) {
+		    // double temp1 = Math.cos(2.0 * Math.PI * rep[i]);
+		     //double temp2 =  rep[i] * rep[i];
+		    // sum += (-10.0 * temp1 ) + temp2 + 10;
 	 }
 			return sum;
 }
