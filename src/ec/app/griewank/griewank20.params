@@ -1,0 +1,95 @@
+parent.0 = ../../gp/koza/koza.params
+
+pop.subpop.0.species.ind.numtrees = 20
+pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.0.tc = tc0
+pop.subpop.0.species.ind.tree.1 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.1.tc = tc0
+pop.subpop.0.species.ind.tree.2 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.2.tc = tc0
+pop.subpop.0.species.ind.tree.3 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.3.tc = tc0
+pop.subpop.0.species.ind.tree.4 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.4.tc = tc0
+pop.subpop.0.species.ind.tree.5 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.5.tc = tc0
+pop.subpop.0.species.ind.tree.6 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.6.tc = tc0
+pop.subpop.0.species.ind.tree.7 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.7.tc = tc0
+pop.subpop.0.species.ind.tree.8 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.8.tc = tc0
+pop.subpop.0.species.ind.tree.9 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.9.tc = tc0
+pop.subpop.0.species.ind.tree.10 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.10.tc = tc0
+pop.subpop.0.species.ind.tree.11 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.11.tc = tc0
+pop.subpop.0.species.ind.tree.12 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.12.tc = tc0
+pop.subpop.0.species.ind.tree.13 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.13.tc = tc0
+pop.subpop.0.species.ind.tree.14 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.14.tc = tc0
+pop.subpop.0.species.ind.tree.15 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.15.tc = tc0
+pop.subpop.0.species.ind.tree.16 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.16.tc = tc0
+pop.subpop.0.species.ind.tree.17 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.17.tc = tc0
+pop.subpop.0.species.ind.tree.18 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.18.tc = tc0
+pop.subpop.0.species.ind.tree.19 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.19.tc = tc0
+
+
+gp.type.a.size = 1
+gp.type.a.0.name = float
+gp.type.s.size = 0
+
+gp.tc.size = 1
+gp.tc.0 = ec.gp.GPTreeConstraints
+gp.tc.0.name = tc0
+gp.tc.0.fset = f0
+gp.tc.0.returns = float
+gp.tc.0.init = ec.gp.koza.HalfBuilder
+
+gp.nc.size = 2
+
+gp.nc.0 = ec.gp.GPNodeConstraints
+gp.nc.0.name = ncf0
+gp.nc.0.returns = float
+gp.nc.0.size = 0
+
+gp.nc.1 = ec.gp.GPNodeConstraints
+gp.nc.1.name = ncff2
+gp.nc.1.returns = float
+gp.nc.1.size = 2
+gp.nc.1.child.0 = float
+gp.nc.1.child.1 = float
+
+gp.fs.size = 1
+gp.fs.0.name = f0
+gp.fs.0.info = ec.gp.GPFuncInfo
+gp.fs.0.size = 5
+
+gp.fs.0.func.0 = ec.app.griewank.func.GriewankERC
+gp.fs.0.func.0.nc = ncf0
+gp.fs.0.func.1 = ec.app.griewank.func.Add
+gp.fs.0.func.1.nc = ncff2
+gp.fs.0.func.2 = ec.app.griewank.func.Subtract
+gp.fs.0.func.2.nc = ncff2
+gp.fs.0.func.3 = ec.app.griewank.func.Mul
+gp.fs.0.func.3.nc = ncff2
+gp.fs.0.func.4 = ec.app.griewank.func.Div
+gp.fs.0.func.4.nc = ncff2
+
+eval.problem = ec.app.griewank.GriewankPro20
+eval.problem.data = ec.app.griewank.GriewankData
+eval.problem.stack.context.data = ec.app.griewank.GriewankData
+
+stat = ec.app.griewank.GriewankStats20
+stat.file = out.stat
+stat.num-children = 1
+stat.child.0 = ec.simple.SimpleShortStatistics
+stat.child.0.file = out2.stat
