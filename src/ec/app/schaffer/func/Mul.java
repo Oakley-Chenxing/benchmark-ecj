@@ -1,8 +1,8 @@
-package ec.app.dejong.func;
+package ec.app.schaffer.func;
 
 import ec.*;
+import ec.app.schaffer.*;
 import ec.gp.*;
-import ec.app.griewank.*;
 
 
 @SuppressWarnings("serial")
@@ -24,7 +24,7 @@ public class Mul extends GPNode {
       final ADFStack stack,
       final GPIndividual individual,
       final Problem problem) {
-	  GriewankData rd = (GriewankData)input;
+	  SchafferData rd = (SchafferData)input;
     children[0].eval(state, thread, input, stack, individual, problem);
     float result = rd.x;
     children[1].eval(state, thread, input, stack, individual, problem); 

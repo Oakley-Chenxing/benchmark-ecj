@@ -2,19 +2,19 @@ package ec.app.griewank;
 
 public class DebugtestGriewank {
 	public static void main(String[] args) {
-	    double[] rep = new double[] { 0.500, 0.100 };
-	    double   ras = rastrigin(rep);
-	    System.out.println("ras: "+ras);
+	    float[] rep = new float[] { 1.414f, 0.800f };
+	    float   gri = griewank(rep);
+	    System.out.println("gri: "+gri);
 	  }
-	 public static double rastrigin(double[] rep) {
-		 //griewank code developed from
-		 //https://
-		 double sum = 0.0;
-
-		   for (int i=0; i<rep.length; i++) {
-		    // double temp1 = Math.cos(2.0 * Math.PI * rep[i]);
-		     //double temp2 =  rep[i] * rep[i];
-		    // sum += (-10.0 * temp1 ) + temp2 + 10;
+	 public static float griewank(float[] rep) {
+		 //griewank code reference:
+		 //http://www.sfu.ca/~ssurjano/griewank.html
+		 float sum = 0.0f;
+         float d = 1.00f;
+		   for (int i=1; i<rep.length; i++) {
+			   float temp1 = rep[i]*rep[i];
+			   float temp2 = (float) (Math.PI * (Math.cos(rep[i]/Math.sqrt(i))));
+			   sum += (1/4000)*temp1 - (temp2)+ d;
 	 }
 			return sum;
 }

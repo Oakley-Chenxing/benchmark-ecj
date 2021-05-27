@@ -1,8 +1,8 @@
-package ec.app.dejong.func;
+package ec.app.schaffer.func;
 
 import ec.*;
+import ec.app.schaffer.*;
 import ec.gp.*;
-import ec.app.griewank.*;
 
 
 @SuppressWarnings("serial")
@@ -24,7 +24,7 @@ public class Div extends GPNode {
       final ADFStack stack,
       final GPIndividual individual,
       final Problem problem) {
-    GriewankData rd = (GriewankData)input;
+    SchafferData rd = (SchafferData)input;
     // evaluate children[1] first to determine if the denominator is 0
     children[1].eval(state, thread, input, stack, individual, problem);
     if (rd.x == 0.0f)

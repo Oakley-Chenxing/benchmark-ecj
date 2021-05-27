@@ -1,4 +1,4 @@
-package ec.app.rastrigin;
+package ec.app.schaffer;
 
 import ec.*;
 import ec.gp.*;
@@ -6,8 +6,8 @@ import ec.gp.koza.*;
 import ec.simple.*;
 
 @SuppressWarnings("serial")
-public class RastriginPro20 extends GPProblem implements SimpleProblemForm { 
-  @Override 
+public class SchafferPro20 extends GPProblem implements SimpleProblemForm { 
+  @Override
   public void evaluate(final EvolutionState state, 
 	      final Individual ind,
 	      final int subpopulation,
@@ -19,9 +19,9 @@ public class RastriginPro20 extends GPProblem implements SimpleProblemForm {
 	        ((GPIndividual)ind).trees[t].child.eval
 	        (state, threadnum, input, stack,
 	            ((GPIndividual)ind), this);
-	        float x = ((RastriginData)input).x;
-	        x       = Math.max(x, 10f);
-	        x       = Math.min(x, -10f);
+	        float x = ((SchafferData)input).x;
+	        x       = Math.max(x, -10f);
+	        x       = Math.min(x, 10f);
 	        rep[t]  = x;
 	      }
 	      
@@ -30,9 +30,10 @@ public class RastriginPro20 extends GPProblem implements SimpleProblemForm {
 	      for (int t=0; t<DIM; t++) {
 	        if (Math.abs(rep[t]) <= 1e-8f)
 	          hits++;
-	        float temp1 = (float) Math.cos(2.0 * Math.PI * rep[t]);
-	        float temp2 = (float) rep[t] * rep[t];
-	        fit += (-10.0 * temp1 ) + temp2 + 10;
+	        float d = 0.50f;
+	        float temp1 = (float) ((Math.sin(rep[t] * rep[t])-(rep[t+1] * rep[t+1]))*(Math.sin(rep[t] * rep[t])-(rep[t+1] * rep[t+1])));
+	        float temp2 = (float) (1.0f + (0.001f*((rep[t] * rep[t])+(rep[t+1] * rep[t+1]))));
+	        fit += d + (temp1 - d) / (temp2 * temp2);
 	      }
 
 	      // the fitness better be KozaFitness!

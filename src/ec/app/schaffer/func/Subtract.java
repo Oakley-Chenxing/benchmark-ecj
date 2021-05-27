@@ -1,14 +1,14 @@
-package ec.app.dejong.func;
+package ec.app.schaffer.func;
 
 import ec.*;
+import ec.app.schaffer.*;
 import ec.gp.*;
-import ec.app.dejong.*;
 
 @SuppressWarnings("serial")
-public class Add extends GPNode {
+public class Subtract extends GPNode {
   @Override
 	public String toString() {
-		return "+";
+		return "-";
 	}
 
 	@Override
@@ -23,10 +23,10 @@ public class Add extends GPNode {
 									 final ADFStack stack,
 									 final GPIndividual individual,
 									 final Problem problem) {
-	  GriewankData rd = (GriewankData)input;
+		SchafferData rd = (SchafferData)input;
 		children[0].eval(state, thread, input, stack, individual, problem);
 		float first = rd.x;
 	  children[1].eval(state, thread, input, stack, individual, problem);	
-		rd.x += first;
+		rd.x = first - rd.x;
 	}
 }

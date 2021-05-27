@@ -1,12 +1,12 @@
-package ec.app.dejong.func;
+package ec.app.schaffer.func;
 
 import ec.*;
+import ec.app.schaffer.*;
 import ec.gp.*;
 import ec.util.*;
-import ec.app.griewank.*;
 
 @SuppressWarnings("serial")
-public class GriewankERC extends ERC {
+public class SchafferERC extends ERC {
 	public float value;
 
 	// making sure that we don't have any children is already
@@ -31,7 +31,7 @@ public class GriewankERC extends ERC {
 		// to change this to isAssignableTo(...)
 		if (this.getClass() != node.getClass()) return false;
 		// now check to see if the ERCs hold the same value
-		return (((GriewankERC)node).value == value);
+		return (((SchafferERC)node).value == value);
 	}
 
 	 @Override
@@ -78,6 +78,6 @@ public class GriewankERC extends ERC {
 									 final ADFStack stack,
 									 final GPIndividual individual,
 									 final Problem problem) {
-		((GriewankData)(input)).x = value;
+		((SchafferData)(input)).x = value;
 	}
 }
