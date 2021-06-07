@@ -25,14 +25,18 @@ public class GriewankPro6 extends GPProblem implements SimpleProblemForm {
 	        rep[t]  = x;
 	      }
 	      
-	      float   fit  = 0f;
+	      float   fit  = 0.0f;
+	      float   sum = 0.0f;
+	      float   prod = 1.0f;
 	      int     hits = 0;
 	      for (int t=0; t<DIM; t++) {
 	        if (Math.abs(rep[t]) <= 1e-8f)
 	          hits++;
 	        float temp1 = (rep[t] * rep[t]);
-	        float temp2 = (float) (Math.PI * (Math.cos(rep[t]/Math.sqrt(t))));
-	        fit += ((1.0f / 4000f) * temp1  - temp2 + 1.0f);
+	        sum += temp1;
+	        float temp2 = (float) (Math.cos(rep[t]/Math.sqrt(t + 1)));
+	        prod *= temp2;
+	        fit += (1/4000)*sum - prod + 1.0f;
 	      }
 
 	      // the fitness better be KozaFitness!
