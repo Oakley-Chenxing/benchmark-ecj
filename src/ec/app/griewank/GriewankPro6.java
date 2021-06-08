@@ -1,5 +1,8 @@
 package ec.app.griewank;
-
+/**
+ * @author Chenxing Li
+ * @email lichenxingbeijing@163.com
+ */
 import ec.*;
 import ec.gp.*;
 import ec.gp.koza.*;

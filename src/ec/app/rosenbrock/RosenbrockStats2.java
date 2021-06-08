@@ -1,5 +1,8 @@
 package ec.app.rosenbrock;
-
+/**
+ * @author Chenxing Li
+ * @email lichenxingbeijing@163.com
+ */
 import ec.*;
 import ec.gp.*;
 import ec.simple.*;

@@ -1,4 +1,10 @@
 package ec.app.griewank;
+
+/**
+ * package ec.app.griewank;
+ * @author Chenxing Li
+ * @email lichenxingbeijing@163.com
+ */
 public class DebugtestGriewank {
 	public static void main(String[] args) {
 	    float[] rep = new float[] { 0f, 0f };

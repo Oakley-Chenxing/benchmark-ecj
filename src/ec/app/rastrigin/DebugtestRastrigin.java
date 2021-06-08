@@ -1,5 +1,8 @@
 package ec.app.rastrigin;
-
+/**
+ * @author Chenxing Li
+ * @email lichenxingbeijing@163.com
+ */
 public class DebugtestRastrigin {
 	public static void main(String[] args) {
 	    double[] rep = new double[] { 0.500, 0.100 };

@@ -1,5 +1,8 @@
 package ec.app.schaffer;
-
+/**
+ * @author Chenxing Li
+ * @email lichenxingbeijing@163.com
+ */
 public class DebugtestSchaffer {
 	public static void main(String[] args) {
 	    float[] rep = new float[] { 5.80f, 8.25f };

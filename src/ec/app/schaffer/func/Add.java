@@ -1,5 +1,8 @@
 package ec.app.schaffer.func;
-
+/**
+ * @author Chenxing Li
+ * @email lichenxingbeijing@163.com
+ */
 import ec.*;
 import ec.app.schaffer.*;
 import ec.gp.*;

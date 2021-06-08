@@ -1,5 +1,8 @@
 package ec.app.rosenbrock;
-
+/**
+ * @author Chenxing Li
+ * @email lichenxingbeijing@163.com
+ */
 public class DebugtestRosenbrock {
   public static void main(String[] args) {
     double[] rep = new double[] { 0.456, 0.239 };
