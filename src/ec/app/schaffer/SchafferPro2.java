@@ -30,13 +30,12 @@ public class SchafferPro2 extends GPProblem implements SimpleProblemForm {
 	      
 	      float   fit  = 0f;
 	      int     hits = 0;
-	      for (int t=0; t<DIM; t++) {
+	      for (int t=0; t<DIM-1; t++) {
 	        if (Math.abs(rep[t]) <= 1e-8f)
 	          hits++;
-	        float d = 0.50f;
 	        float temp1 = (float) ((Math.sin(rep[t] * rep[t])-(rep[t+1] * rep[t+1]))*(Math.sin(rep[t] * rep[t])-(rep[t+1] * rep[t+1])));
 	        float temp2 = (float) (1.0f + (0.001f*((rep[t] * rep[t])+(rep[t+1] * rep[t+1]))));
-	        fit += d + (temp1 - d) / (temp2 * temp2);
+	        fit += 0.5f + (temp1 - 0.5f) / (temp2 * temp2);
 	      }
 
 	      // the fitness better be KozaFitness!

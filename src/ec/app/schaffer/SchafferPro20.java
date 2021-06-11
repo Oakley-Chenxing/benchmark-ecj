@@ -30,7 +30,7 @@ public class SchafferPro20 extends GPProblem implements SimpleProblemForm {
 	      
 	      float   fit  = 0f;
 	      int     hits = 0;
-	      for (int t=0; t<DIM; t++) {
+	      for (int t=0; t<DIM-1; t++) {
 	        if (Math.abs(rep[t]) <= 1e-8f)
 	          hits++;
 	        float d = 0.50f;
